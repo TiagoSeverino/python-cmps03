@@ -75,9 +75,9 @@ class CMPS03():
 		self.write_reg(self.CMPS03_UNLOCK3, 0xA5)
 		self.write_reg(self.CMPS03_REGADDR, scanPeriods[mode])
 
-	def changeAdress(self, newAddr):
+	def changeAddress(self, newAddr):
 		"""
-		ID | Adress
+		ID | Address
 		0	 0xC0
 		1	 0xC2
 		2	 0xC4
@@ -88,12 +88,12 @@ class CMPS03():
 		7	 0xCE
 		"""
 		
-		adresses = [0xC0, 0xC2, 0xC4, 0xC6, 0xC8, 0xCA, 0xCC, 0xCE]
+		addresses = [0xC0, 0xC2, 0xC4, 0xC6, 0xC8, 0xCA, 0xCC, 0xCE]
 
 		self.write_reg(self.CMPS03_UNLOCK1, 0xA0)
 		self.write_reg(self.CMPS03_UNLOCK2, 0xAA)
 		self.write_reg(self.CMPS03_UNLOCK3, 0xA5)
-		self.write_reg(self.CMPS03_REGADDR, adresses[newAddr])
+		self.write_reg(self.CMPS03_REGADDR, addresses[newAddr])
 
 	def factoryReset(self):
 		self.write_reg(self.CMPS03_UNLOCK1, 0x55)
